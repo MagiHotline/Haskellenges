@@ -1,5 +1,6 @@
 -- Function to read a matrix of integers
 readMatrix :: Int -> IO [[Int]]
+-- readIntList reads a line of integers and returns a list of integers for each line
 readMatrix rows = sequence [readIntList | _ <- [1..rows]]
   where
     readIntList = map read . words <$> getLine
